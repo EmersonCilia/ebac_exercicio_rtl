@@ -10,7 +10,7 @@ describe('Teste para o componente PostComment', () => {
         expect(screen.getByText('Comentar')).toBeInTheDocument();
     });
 
-    test('Deve renderizar corretamente com 2 comentários', () => {
+    test('Deve renderizar corretamente com um comentário e adicionar outro', () => {
     const initialComments = [
       new Comment(1, 'Primeiro comentário')
     ]
