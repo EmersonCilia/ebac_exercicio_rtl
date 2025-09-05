@@ -3,8 +3,12 @@ import styles from './PostComments.module.css';
 
 import Comment from '../../models/Comment';
 
-const Post = () => {
-    const [comments, setComments] = useState<Comment[]>([]);
+type Props = {
+  initialComments?: Comment[]
+}
+
+const Post = ({ initialComments = [] }: Props) => {
+    const [comments, setComments] = useState<Comment[]>(initialComments);
     const [tempComment, setTempComment] = useState('');
 
     function handleAddComment(event: FormEvent<HTMLFormElement>) {
@@ -16,9 +20,9 @@ const Post = () => {
 
     return (
         <div>
-            <ul className={styles['post-comments']}>
+            <ul  className={styles['post-comments']}>
                 {comments.map(({ comment, id }) => (
-                    <li className={styles['post-comment']} key={id}>
+                    <li data-testid='post-created' className={styles['post-comment']} key={id}>
                         <p className={styles['post-comment-content']}>
                             {comment}
                         </p>
