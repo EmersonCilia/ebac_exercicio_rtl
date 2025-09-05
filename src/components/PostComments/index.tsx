@@ -30,8 +30,8 @@ const Post = ({ initialComments = [] }: Props) => {
                 ))}
             </ul>
             <form onSubmit={handleAddComment} className={styles['post-comments-form']}>
-                <textarea value={tempComment} onChange={e => setTempComment(e.target.value)} required className={styles['post-comments-form-textarea']} />
-                <button type="submit" className={styles['post-comments-form-button']}>
+                <textarea data-testid='post-textarea' value={tempComment} onChange={e => setTempComment(e.target.value)} required className={styles['post-comments-form-textarea']} />
+                <button data-testid='post-button' type="submit" className={styles['post-comments-form-button']}>
                     Comentar
                 </button>
             </form>
