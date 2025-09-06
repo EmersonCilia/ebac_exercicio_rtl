@@ -12,7 +12,7 @@ describe('Teste para o componente PostComment', () => {
 
     test('Deve renderizar corretamente com um comentário e adicionar outro', () => {
     const initialComments = [
-      new Comment(1, 'Primeiro comentário')
+      new Comment(0, 'Primeiro comentário')
     ]
 
     render(<PostComment initialComments={initialComments} />)
